@@ -12,5 +12,51 @@
 	(b) Si existe fricción entre el niño y el hielo,
 	¿se desprenderá de la superficie en un punto inferior
 	o superior que el encontrado en (a)?
+
+	\startsolution
+
+	Las fuerzas que actúan sobre el niño son la fuerza debida a la aceleración
+	de la gravedad, la fuerza normal \(F_{N}\) y la fuerza centrípeta \(F_{c}\). Por
+	segunda ley de Newton, tenemos
+
+	\begin{equation*}
+		mg\cos\theta - F_{N}  = m \dfrac{v^{2}}{R}.
+	\end{equation*}
+
+	Pero como nos interesa encontrar el punto donde el niño se desprende,
+	\(F_{N} = 0\), por lo que
+
+	\begin{align}
+		mg\cos\theta & = \dfrac{mv^{2}}{R}, \nonumber  \\
+		g\cos\theta  & = \dfrac{v^{2}}{R},\nonumber    \\
+		v^{2}        & = gR\cos\theta.\label{eq:vSqrd}
+	\end{align}
+
+	Ahora, para encontrar la altura nos fijamos en la conservación de la energía. Sabemos
+	que el niño comienza en la parte superior del montón de hielo, por lo que tiene una
+	energía potencial inicial \(mgR\), pero no energía cinética. Mientras que en el punto
+	en el que se desprende la energía potencial es \(mgh\), con \(h = R\cos\theta\) y
+	la energía cinética es \(\tfrac{1}{2}mv^{2}\). Por lo que,
+
+	\begin{equation}
+		mgR = \dfrac{1}{2}mv^{2} + mgR\cos\theta.
+		\label{eq:energy}
+	\end{equation}
+
+	Sustituyendo la \zcref{eq:vSqrd} en la \zcref{eq:energy},
+
+	\begin{align*}
+		gR                    & = \dfrac{1}{2}(gR\cos\theta) + gR\cos\theta, \\
+		1                     & = \biggl(\tfrac{1}{2} + 1\biggr)\cos\theta,  \\
+		1                     & = \dfrac{3}{2}\cos\theta,                    \\
+		\Aboxedsec{\cos\theta & = \dfrac{3}{2}.}
+	\end{align*}
+
+	De esta manera,
+
+	\begin{empheq}[box=\mainresult]{equation*}
+		h = \dfrac{2}{3}R.
+	\end{empheq}
+
 \end{problema}
 \end{document}

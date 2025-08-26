@@ -3,9 +3,51 @@
 \begin{document}
 \begin{problema}
 	La posición de una partícula como función del tiempo \(t\) está dada
-	por \(\vect{x}(t) = A(\uveci\cos(\omega t) \uvecj\sin(\omega t))\).
+	por \(\vect{x}(t) = A(\uveci\cos(\omega t) + \uvecj\sin(\omega t))\).
 	Encuentra su velocidad \(\vect{v}\) y aceleración \(\vect{a}\)
 	como función del tiempo y calcula sus magnitudes.
 	¿Qué dimensiones tienen \(A\) y \(\omega\)?
+
+	\startsolution
+
+	Para encontrar la velocidad calculamos \(\dot{x}\),
+
+	\begin{align}
+		\va{v} = \dot{x}      & = \odv*{\Biggl[A(\uveci\cos\omega t \uvecj\sin\omega t)\Biggr]}{t},\nonumber       \\
+		                      & = A\odv*{\biggl[\uveci\cos\omega t + \uvecj\sin\omega t\biggr]}{t},\nonumber       \\
+		                      & = A \biggl[\uveci(-\omega\sin\omega t) + \uvecj\omega\cos\omega t\biggr],\nonumber \\
+		\Aboxedmain{\va{v}(t) & = -A\omega\sin\omega t \uveci + A\omega\cos\omega t \uvecj.}\label{eq:Velocity}
+	\end{align}
+
+
+	Para encontrar la aceleración, calculamos \(\ddot{x}\) o \(\dot{\va{v}}\), entonces
+
+	\begin{align*}
+		\va{a}(t)             & = \odv*{\Biggl[A\omega \biggl(-\sin\omega t \uveci + \cos\omega t \uvecj\biggr)\Biggr]}{t},\nonumber \\
+		                      & = A\omega \Biggl[-\omega\cos\omega t \uveci - \omega\sin\omega t \uvecj\Biggr],\nonumber             \\
+		\Aboxedmain{\va{a}(t) & = -A\omega^{2}\Biggl[\cos\omega t \uveci + \sin\omega t \uvecj\Biggr].}
+	\end{align*}
+
+	Hacemos un análisis dimensional para encontrar las dimensiones de \(A\) y \(\omega\).
+	Recordemos que
+
+	\begin{equation*}
+		[\va{x}] = [L],\qquad [\va{v}] = \Biggl[\dfrac{L}{T}\Biggr],\qquad [\va{a}] = \Biggl[\dfrac{L}{T^{2}}\Biggr].
+	\end{equation*}
+
+	Entonces, ¿qué dimensiones debe tener \(A\) y \(\omega\) para que esto se cumpla?
+	Sabemos que las dimensiones de las cantidades físicas están dada por la amplitud
+	\(A\), por lo que el resto de la expresión debe ser adimensional. Es decir, las
+	dimensiones de \([t] = [T]\), por lo que
+
+	\begin{empheq}[box=\mainresult]{equation*}
+		[\omega] = \biggl[\dfrac{1}{T}\biggr].
+	\end{empheq}
+
+	Entonces,
+
+	\begin{empheq}[box=\mainresult]{equation*}
+		[A] = [L].
+	\end{empheq}
 \end{problema}
 \end{document}

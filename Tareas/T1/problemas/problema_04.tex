@@ -6,9 +6,10 @@
 	con una velocidad \(v\) que depende del tiempo
 	de la siguiente manera:
 
-	\begin{equation*}
+	\begin{equation}
 		v = 12t - 3t^{2}.
-	\end{equation*}
+		\label{eq:velP}
+	\end{equation}
 
 	Inicialmente, la partícula \(P\) está en el punto
 	\(x = \qty{20}{m}\) y se mueve en la dirección positiva
@@ -16,5 +17,63 @@
 	Encuentra la posición y la aceleración de \(P\) como función
 	de \(t\). Encuentren también la posición final en donde se
 	detiene la partícula.
+
+	\startsolution
+
+	Para encontrar la posición de la partícula, integramos \zcref{eq:velP},
+
+	\begin{align}
+		x(t)             & = \int \odif{t} (12t - 3t^{2}),\nonumber                \\
+		                 & = 12\dfrac{t^{2}}{2} - 3 \dfrac{t^{3}}{3} + C,\nonumber \\
+		\Aboxedmain{x(t) & = 6t^{2} - t^{3} + C.} \label{eq:XtWCte}
+	\end{align}
+
+	Sustituyendo la condición inicial \(x(0) = \qty{20}{m}\) en la \zcref{eq:XtWCte}, obtenemos
+
+	\begin{align*}
+		x(0) & = 6(0)^{2} - (0)^{3} + C = 20,\nonumber \\
+		C    & = 20.
+	\end{align*}
+
+	Entonces,
+
+	\begin{empheq}[box=\mainresult]{equation}
+		x(t) = 6t^{2} - t^{3} + 20.
+		\label{eq:xT}
+	\end{empheq}
+
+	Ahora para obtener la aceleración, derivamos la \zcref{eq:velP},
+
+	\begin{empheq}[box=\mainresult]{equation*}
+		a(t) = 12 - 6t.
+	\end{empheq}
+
+	La partícula se detiene cuando \(v = 0\),
+
+	\begin{align*}
+		v(0) & = 12t - 3t = 0,  \\
+		     & = 3t(4 - t) = 0.
+	\end{align*}
+
+	Tal que \(t = 0\) o \(t = 4\); sin embargo, cuando \(t = 0 \Rightarrow v = \qty{15}{\m\per\s}\).
+	Por lo que la partícula se detiene en
+
+	\begin{equation*}
+		t = \qty{4}{s}.
+	\end{equation*}
+
+	Sustituyendo el valor de \(t\) en la \zcref{eq:xT},
+
+	\begin{align*}
+		x(4) & = 6(4)^{2} - (4)^{3} + 20, \\
+		     & = 96 - 64 + 20,            \\
+		x(4) & = 52.
+	\end{align*}
+
+	Por lo tanto, la partícula se detiene en la posición
+
+	\begin{empheq}[box=\mainresult]{equation*}
+		x = \qty{52}{m}.
+	\end{empheq}
 \end{problema}
 \end{document}
