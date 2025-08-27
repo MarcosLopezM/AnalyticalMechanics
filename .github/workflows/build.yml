@@ -1,0 +1,39 @@
+name: Build LaTeX Project
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "Tareas/**"
+
+jobs:
+  detect-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Detect changed project
+        id: detect
+        run: |
+          changed_dirs=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '^Tareas/T[0-9]\+/' | cut -d/ -f1-2 | sort -u)
+
+          if [ -z "$changed_dirs" ]; then
+            echo "No projects changed."
+            exit 0
+          fi
+
+          project=$(echo "$changed_dirs" | head -n 1)
+          echo "Detected project: $project"
+          echo "project=$project" >> $GITHUB_OUTPUT
+
+  build:
+    needs: detect-and-build
+    if: needs.detect-and-build.outputs.project != ''
+    uses: MarcosLopezM/latex-workflow/.github/workflows/build-pdf.yml@main
+    with:
+      root_file: "${{ needs.detect-and-build.outputs.project }}/main.tex"
+      send_it: true
+      email_to: "marcoslm@ciencias.unam.mx"
+    secrets: inherit
