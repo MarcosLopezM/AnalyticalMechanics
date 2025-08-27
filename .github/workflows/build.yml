@@ -10,7 +10,7 @@ jobs:
     uses: MarcosLopezM/latex-workflow/.github/workflows/build-pdf.yml@main
     with:
       relative_path: Tareas/T2
-      pdf_name: Tarea2
+      pdf_name: main
       send_it: true
       email_to: "marcoslm@ciencias.unam.mx"
     secrets: inherit
