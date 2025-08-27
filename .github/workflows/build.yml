@@ -1,4 +1,4 @@
-name: Tarea 2
+name: Compile LaTeX projects
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - "Tareas/T2/**"
 
 jobs:
-  build-t2:
+  build-tarea-2:
     uses: MarcosLopezM/latex-workflow/.github/workflows/build-pdf.yml@main
     with:
       relative_path: Tareas/T2
