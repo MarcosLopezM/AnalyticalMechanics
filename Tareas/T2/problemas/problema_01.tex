@@ -23,4 +23,184 @@
 \end{problema}
 
 \startsolution
+
+Las dos encontrar solución son
+
+\begin{align}
+	\ddot{x} + \Omega^{2} & = -F_{0}, \txt{para} \dot{x} > 0,\label{eq:pos-greater-speed} \\
+	\ddot{x} + \Omega^{2} & = F_{0}. \txt{para} \dot{x} < 0.\label{eq:pos-less-speed}
+\end{align}
+
+Sabemos que su solución general es de la forma
+
+\begin{equation}
+	x(t) = x_{H}(t) + x_{P}(t),
+	\label{eq:sol-non-homegeneuous}
+\end{equation}
+
+donde \(x_{H}\) es la solución a la ecuación homogénea y \(x_{P}\) la solución
+a la ecuación particular.
+
+Primero resolvemos la ecuación diferencial homogénea, que es la misma para ambas
+ecuaciones,
+
+\begin{equation}
+	\ddot{x} + \Omega^{2}x = 0.
+	\label{eq:homoegeneous}
+\end{equation}
+
+Inmediatamente se puede ver que su solución es de la forma
+
+\begin{equation}
+	x(t) = A\cos(\Omega t) + B\sin(\Omega t).
+	\label{eq:sol-cossin}
+\end{equation}
+
+Para resolver \(x_{P}(t)\) proponemos una solución de la forma
+
+\begin{equation*}
+	x_{P}(t) = C,
+\end{equation*}
+
+tal que
+
+\begin{equation*}
+	\dot{x}_{P} = 0 = \ddot{x}_{P}.
+\end{equation*}
+
+Entonces,
+
+\begin{align*}
+	C_{1} & = -\dfrac{F_{0}}{\Omega^{2}}, \txt{para} \dot{x} > 0 \\
+	C_{2} & = \dfrac{F_{0}}{\Omega^{2}}. \txt{para} \dot{x} < 0
+\end{align*}
+
+Por lo que las soluciones generales,
+
+\begin{align}
+	x_{1}(t) & = A\cos(\Omega t) + B\sin(\Omega t) - \dfrac{F_{0}}{\Omega^{2}}, \txt{para} \dot{x} > 0, \label{eq:sol-greater-coef} \\
+	x_{2}(t) & = C\cos(\Omega t) + D\sin(\Omega t) + \dfrac{F_{0}}{\Omega^{2}}, \txt{para} \dot{x} < 0, \label{eq:sol-less-coef}
+\end{align}
+
+Queremos conocer cómo es el movimiento después de \(t = 0\), por lo que
+nos fijamos en la fuerza restaurativa, i.e. \(F_{R} = -\Omega^{2}x\).
+Sabemos que \(x(0)\)
+
+\begin{align*}
+	F_{R} & = -\Omega^{2}\biggl(\dfrac{9F_{0}}{2\Omega^{2}}\biggr), \\
+	F_{R} & = -\dfrac{9F_{0}}{2}.
+\end{align*}
+
+De las relaciones que se nos dan, la magnitud de la fuerza restaurativa
+es mayor que \(F_{0}\), i.e.
+
+\begin{equation*}
+	\dfrac{9F_{0}}{2} > F_{0}.
+\end{equation*}
+
+Es decir, el objeto continúa en movimiento y, en particular como la fuerza
+restaurativa es mayor en magnitud y su dirección es contraria al movimiento,
+usamos \zcref{eq:sol-less-coef}.
+
+\begin{align*}
+	x(0) = \dfrac{9F_{0}}{2\Omega^{2}} & = A\cos(\Omega t) + B\sin(\Omega t) + \dfrac{F_{0}}{\Omega^{2}}, \nonumber \\
+	                                   & = A\cos(0) + B\sin(0) + \dfrac{F_{0}}{\Omega^{2}},              \nonumber  \\
+	\Longrightarrow\; A                & = \dfrac{9F_{0}}{2\Omega^{2}} - \dfrac{F_{0}}{\Omega^{2}},       \nonumber \\
+	\Aboxedsec{A                       & = \dfrac{7F_{0}}{2\Omega^{2}}.}                                            \\
+	\dot{x}(0) = 0                     & = -A\Omega\sin(0) + B\Omega\cos(0),                                        \\
+	\Aboxedsec{B                       & = 0.}
+\end{align*}
+
+Por lo que solución es
+
+\begin{equation}
+	x(t) = \dfrac{7F_{0}}{2\Omega^{2}}\cos(\Omega t) + \dfrac{F_{0}}{\Omega^{2}}.
+	\label{eq:sol-less-gral}
+\end{equation}
+
+Ahora para encontrar el tiempo que tardó en detenerse
+estudiamos \(\dot{x}(t) = 0\),
+
+\begin{align*}
+	\dot{x}(t)     & = -\dfrac{7F_{0}}{2\Omega^{2}}\Omega\sin(\Omega t) = 0, \\
+	\sin(\Omega t) & = 0.
+\end{align*}
+
+Sabemos que los ceros de la función seno están en
+
+\begin{align*}
+	\Omega t & = n\pi,                                 \\
+	t        & = \dfrac{n\pi}{\Omega}, n\in\mathbb{N}.
+\end{align*}
+
+En particular, como queremos saber que pasa después, consideramos \(n = 1\),
+
+\begin{equation}
+	t = \dfrac{\pi}{\Omega}.
+	\label{eq:t-1st-left}
+\end{equation}
+
+Sustituyendo la \zcref{eq:t-1st-left} en la \zcref{eq:sol-less-gral}
+para determinar la distancia a la que se detiene,
+
+\begin{align*}
+	x \biggl(\dfrac{\pi}{\Omega}\biggr)           & = \dfrac{7F_{0}}{2\Omega^{2}}\cos \biggl[\Omega\biggl(\dfrac{\pi}{\Omega}\biggr)\biggr] + \dfrac{F_{0}}{\Omega^{2}}, \\
+	                                              & = -\dfrac{7F_{0}}{2\Omega^{2}} + \dfrac{F_{0}}{\Omega^{2}},                                                          \\
+	\Aboxedsec{x\biggl(\dfrac{\pi}{\Omega}\biggr) & = \dfrac{-5F_{0}}{2\Omega^{2}}.}
+\end{align*}
+
+Sabiendo que la fuerza restaurativa está dada como
+\(F_{R} = \Omega^{2}x\),
+
+\begin{align*}
+	F_{R} & = \Omega^{2}x \biggl(\dfrac{\pi}{\Omega}\biggr),        \\
+	      & = \Omega^{3}\biggl(\dfrac{-5F_{0}}{2\Omega^{2}}\biggr), \\
+	F_{R} & = \dfrac{-5F_{0}}{2}.
+\end{align*}
+
+Por lo tanto, \( \tfrac{5F_{0}}{2} > F_{0}\). Si ahora sustituimos
+las condiciones iniciales \( x \bigl(\tfrac{2\pi}{\Omega}\bigr) = \tfrac{-5F_{0}}{2\Omega^{2}}\) y \(\dot{x}\bigl(\tfrac{2\pi}{\Omega}\bigr) = 0\) en
+la \zcref{ eq:sol-greater-coef},
+
+\begin{align*}
+	x\bigl(\tfrac{2\pi}{\Omega}\bigr) = \dfrac{-5F_{0}}{2\Omega^{2}} & = C\cos(2\pi) + D\sin(2\pi) - \dfrac{F_{0}}{\Omega^{2}},    \\
+	\dfrac{-5F_{0}}{2\Omega^{2}}                                     & = C - \dfrac{F_{0}}{\Omega^{2}},                            \\
+	\Longrightarrow C                                                & = \dfrac{-5F_{0}\Omega^{2} - 2F_{0}\Omega^{2}}{2\Omega^{4}} \\
+	\Aboxedsec{C                                                     & = \dfrac{-3F_{0}}{2\Omega^{2}}.}                            \\
+	\dot{x}\bigl(\tfrac{2\pi}{\Omega}\bigr) = 0                      & = -\Omega C\sin(2\pi) + D\cos(2\pi),                        \\
+	0                                                                & = D\Omega,                                                  \\
+	\Aboxedsec{D                                                     & = 0.}
+\end{align*}
+
+Por lo tanto, la solución general para este caso queda como:
+
+\begin{equation*}
+	x(t) = \dfrac{-3F_{0}}{2\Omega^{2}}\cos(\Omega t) - \dfrac{F_{0}}{\Omega^{2}}.
+\end{equation*}
+
+Finalmente encontramos el tiempo al que se detiene:
+
+\begin{align*}
+	\dot{x}(t)        & = -\dfrac{3F_{0}}{2\Omega^{2}}\Omega\sin(\Omega t) = 0, \\
+	\sin(\Omega t)    & = 0,                                                    \\
+	\Longrightarrow t & = \dfrac{n\pi}{\Omega}.
+\end{align*}
+
+Ahora con \(n = 3\), por lo que la distancia a \(t = \tfrac{3\pi}{\Omega}\) es,
+
+\begin{align*}
+	x(t) & = -\dfrac{3F_{0}}{2\Omega^{2}}\cos(3\pi),                                               \\
+	     & = \dfrac{3F_{0}}{2\Omega^{2}} - \dfrac{F_{0}}{\Omega^{2}} = \dfrac{F_{0}}{2\Omega^{2}}.
+\end{align*}
+
+Si calculamos nuevamente la fuerza restaurativa:
+
+\begin{align*}
+	F_{R} & = -\Omega^{2}\biggl(\dfrac{F_{0}}{2\Omega^{2}}\biggr), \\
+	      & = -\dfrac{F_{0}}{2},                                   \\
+	\therefore\; \dfrac{F_{0}}{2} < F_{0}.
+\end{align*}
+
+Por lo tanto, el cuerpo se detiene después de completar un período en la
+posición \(\tfrac{F_{0}}{2\Omega^{2}}\).
 \end{document}
