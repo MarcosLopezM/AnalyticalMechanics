@@ -4,9 +4,9 @@
 \begin{problema}
 	Un oscilador sobreamortiguado satisface la ecuación
 
-	\begin{equation}
+	\begin{equation*}
 		\ddot{x} + 10\dot{x} + 16x = 0.
-	\end{equation}
+	\end{equation*}
 
 	En \(t = 0\) la partícula está en \(x = 1\) y sale con
 	dirección hacia el origen con velocidad \(u\).
@@ -16,6 +16,7 @@
 
 	\begin{equation}
 		\dfrac{u - 2}{u - 8} = \mathrm{e}^{6t}.
+		\label{eq:condition}
 	\end{equation}
 
 	¿Qué tan grande tiene que ser \(u\) para que la
@@ -24,5 +25,82 @@
 
 \startsolution
 
-\kant[1-3]
+Para encontrar la solución general a la ecuación diferencial
+proponemos \(x = \mathrm{e}^{\lambda t}\), tal que,
+
+\begin{align*}
+	\dot{x}  & = \lambda \mathrm{e}^{\lambda t},    \\
+	\ddot{x} & = \lambda^{2} \mathrm{e}^{\lambda t}
+\end{align*}
+
+Sustituyendo las expresiones anteriores tenemos que el polinomio
+característico queda de la forma:
+
+\begin{align*}
+	\lambda^{2} + 10\lambda + 16 & = 0,                          \\
+	\Longrightarrow \lambda_{1}  & = -2 \wedge \lambda_{2} = -8.
+\end{align*}
+
+De esta manera, la solución y su derivada quedan como:
+
+\begin{align}
+	x(t)       & = A \mathrm{e}^{-2t} + B \mathrm{e}^{-8t},\label{eq:sol-pos}    \\
+	\dot{x}(t) & = -2A \mathrm{e}^{-2t} - 8B \mathrm{e}^{-8t}.\label{eq:sol-vel}
+\end{align}
+
+Sustituyendo las condiciones iniciales \(x(0) = 1\) y \(x(0) = -u\),
+respectivamente, en las \zcref{eq:sol-pos,eq:sol-vel},
+
+\begin{align}
+	x(0) = 1        & = A \mathrm{e}^{0} + B \mathrm{e}^{0},\nonumber    \\
+	A + B           & = 1.\label{eq:first-syst}                          \\
+	\dot{x}(t) = -u & = -2A \mathrm{e}^{0} - 8B \mathrm{e}^{0},\nonumber \\
+	2A + 8B         & = u.\label{eq:second-syst}
+\end{align}
+
+Multiplicando la \zcref{eq:first-syst} por 2 y
+restándola a la \zcref{eq:second-syst},
+
+\begin{align}
+	6B           & = u - 2,\nonumber                          \\
+	\Aboxedsec{B & = \dfrac{u - 2}{6}.}\label{eq:second-coef}
+\end{align}
+
+Sustituyendo la \zcref{eq:second-coef} en la \zcref{eq:first-syst},
+
+\begin{align}
+	A + \dfrac{u - 2}{6} & = 1,\nonumber                                \\
+	A                    & = \dfrac{6 - u + 2}{6},\nonumber             \\,
+	\Aboxedsec{A         & = \dfrac{8 - u}{6}.}\label{eq:eq:first-coef}
+\end{align}
+
+Sustituyendo las \zcref{eq:eq:first-coef, eq:second-coef} en
+la \zcref{eq:sol-pos} obtenemos que la solución general es
+
+\begin{empheq}[box = \mainresult]{equation}
+	x(t) = \dfrac{8 - u}{6}\mathrm{e}^{-2t} + \dfrac{u - 2}{6}\mathrm{e}^{-8t}.
+	\label{eq:gral-sol-p3}
+\end{empheq}
+
+Para determinar que la partícula llegará al origen si se satisface la
+\zcref{eq:condition}, igualamos la \zcref{eq:gral-sol-p3} a cero,
+i.e.
+
+\begin{align}
+	\dfrac{8 - u}{6}\mathrm{e}^{-2t} + \dfrac{u - 2}{6}\mathrm{e}^{-8t} & = 0,\nonumber                          \\
+	(8 - u)\mathrm{e}^{-2t} + (u - 2)\mathrm{e}^{-8t}                   & = 0,\nonumber                          \\
+	(8 - u) + (u - 2)\mathrm{e}^{-6t}                                   & = 0,\nonumber                          \\
+	(u - 2)\mathrm{e}^{-6t}                                             & = -(8 - u),\nonumber                   \\
+	\Aboxedmain{\dfrac{u - 2}{u - 8}                                    & = \mathrm{e}^{6t}.}\label{eq:sat-cond}
+\end{align}
+
+Para determinar el valor máximo de la velocidad que nos asegure que la
+partícula se pase del origen de coordenadas, usamos la prueba de la segunda
+derivada. Primero resolvemos la \zcref{eq:sat-cond} para \(u\),
+
+\begin{align}
+	u - 2                  & = u \mathrm{e}^{6t} - 8\mathrm{e}^{6t},\nonumber      \\
+	u(1 - \mathrm{e}^{6t}) & = 2 - 8\mathrm{e}^{6t},\nonumber                      \\
+	\Aboxedsec{u           & = \dfrac{2 - 8\mathrm{e}^{6t}}{1 - \mathrm{e}^{6t}}.}
+\end{align}
 \end{document}
