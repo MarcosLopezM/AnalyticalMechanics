@@ -11,17 +11,35 @@
 
 \startsolution
 
-Usando la ecuación de Binet podemos determinar la fuerza,
+Partimos de la conservación de la energía:
+
+\begin{equation*}
+	E = \dfrac{1}{2}m \dot{r}^{2} + \dfrac{L^{2}}{2mr^{2}} + U(r).
+\end{equation*}
+
+Escribiendo \(L^{2}\) en términos de la energía,
+
+\begin{equation*}
+	L^{2} = 2mr^{2}\Biggl(E - U(r) - \tfrac{1}{2}m \dot{r}^{2}\Biggr).
+\end{equation*}
+
+Sabemos que para que una órbita sea circular en \(r = r_{0}\)
+sea estable si \(\dot{r} = 0\) para todo tiempo \(t\),
+lo cual es posible si \(\pdv{U_{eff}}{r} = 0\). Entonces,
 
 \begin{align*}
-	\odv*{\biggl(\dfrac{1}{r}\biggr)}{\theta} & = -\dfrac{2}{k\theta^{3}},                                                                                                           \\
-	\odv*{\biggl(\dfrac{1}{r}\biggr)}{\theta} & = \odv*{\biggl(-\dfrac{2}{k\theta^{3}}\biggr)}{\theta} = \dfrac{6}{k\theta^{4}} = \dfrac{6k}{(k\theta^{2})^{2}} = \dfrac{6k}{r^{2}}.
+	\Bigl. \pdv{U_{eff}}{r}\Bigr\rvert_{r = r_{0}} & = -\dfrac{L^{2}}{2mr^{2}} + U^{\prime}(r) = 0 , \\
+	\Rightarrow\; \dfrac{L^{2}}{2mr_{0}^{3}}       & = U^{\prime}(r_{0}),                            \\
+	L_{r_{0}}^{2}                                  & = 2mr_{0}^{3}U^{\prime}(r_{0}).
 \end{align*}
 
-Entonces,
+Por lo tanto,
 
-\begin{align}
-	\dfrac{6k}{r^{2}} + \dfrac{1}{r} & = -\dfrac{mr^{2}}{L^{2}}F(r),                                            \\
-	\Aboxedmain{F(r)                 & = \dfrac{-L^{2}}{mr^{2}}\Biggl(\dfrac{6k}{r^{2}} + \dfrac{1}{r}\Biggr).}
-\end{align}
+\begin{align*}
+	L^{2} < L_{r_{0}}^{2}, \\
+	L < L_{r_{0}}.
+\end{align*}
+
+Es decir el momento angular para la órbita circular es más
+grande que el de cualquier otra órbita de la familia.
 \end{document}
