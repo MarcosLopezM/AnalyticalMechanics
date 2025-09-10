@@ -8,4 +8,20 @@
 	asociado a dicha órbita es más grande que el valor del momento
 	angular de cualquier otra órbita de la familia.
 \end{problema}
+
+\startsolution
+
+Usando la ecuación de Binet podemos determinar la fuerza,
+
+\begin{align*}
+	\odv*{\biggl(\dfrac{1}{r}\biggr)}{\theta} & = -\dfrac{2}{k\theta^{3}},                                                                                                           \\
+	\odv*{\biggl(\dfrac{1}{r}\biggr)}{\theta} & = \odv*{\biggl(-\dfrac{2}{k\theta^{3}}\biggr)}{\theta} = \dfrac{6}{k\theta^{4}} = \dfrac{6k}{(k\theta^{2})^{2}} = \dfrac{6k}{r^{2}}.
+\end{align*}
+
+Entonces,
+
+\begin{align}
+	\dfrac{6k}{r^{2}} + \dfrac{1}{r} & = -\dfrac{mr^{2}}{L^{2}}F(r),                                            \\
+	\Aboxedmain{F(r)                 & = \dfrac{-L^{2}}{mr^{2}}\Biggl(\dfrac{6k}{r^{2}} + \dfrac{1}{r}\Biggr).}
+\end{align}
 \end{document}
