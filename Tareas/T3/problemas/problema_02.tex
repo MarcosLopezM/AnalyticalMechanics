@@ -11,4 +11,90 @@
 
 	Muestra que la órbita de la misma solo puede ser hiperbólica.
 \end{problema}
+
+\startsolution
+
+Obtenemos el potencial,
+
+\begin{align}
+	U(r) & = - \int \odif[sep-end=\medspace]{r} kr ,\nonumber \\
+	U(r) & = -\dfrac{kr^{2}}{2}.\label{eq:Potential-P2}
+\end{align}
+
+Por lo que el potencial efectivo es
+
+\begin{equation}
+	U^{eff}(r) = \dfrac{L^{2}}{2mr^{2}} - \dfrac{kr^{2}}{2}.
+	\label{eq:EffectivePotential-P2}
+\end{equation}
+
+La energía total del sistema es
+
+\begin{align*}
+	E                        & = \dfrac{1}{2}m\dot{r}^{2} + \dfrac{L^{2}}{2mr^{2}} - \dfrac{kr^{2}}{2},\nonumber                                     \\
+	\dfrac{1}{2}m\dot{r}^{2} & = E - \dfrac{L^{2}}{2mr^{2}} + \dfrac{kr^{2}}{2},\nonumber                                                            \\
+	\odv{r}{t}               & = \sqrt{\dfrac{2}{m}}\sqrt{E - \dfrac{L^{2}}{2mr^{2}} + \dfrac{kr^{2}}{2}},                                           \\
+	\theta(r)                & = \int \odif[sep-end=\medspace]{r} \dfrac{\tfrac{L}{r^{2}}}{2m\sqrt{E - \tfrac{L^{2}}{2mr^{2}} + \tfrac{kr^{2}}{2}}}.
+\end{align*}
+
+Hacemos el siguiente cambio de variable para resolver la integral
+
+\begin{alignat*}{3}
+	x        & = r^{2}       & {}\Rightarrow{} & r                    & = \sqrt{x}, \\
+	\odif{x} & = 2r \odif{r} & {}\Rightarrow{} & \dfrac{\odif{x}}{2r} & = \odif{r}.
+\end{alignat*}
+
+Por lo que integral queda como:
+
+\begin{align*}
+	\theta(x) & = \int \odif[sep-end=\medspace]{x} \dfrac{1}{x\sqrt{4 \Biggl(\tfrac{2Emx}{L^{2}} + \tfrac{kmx^{2}}{L^{2}} - 1\Biggr)}}, \\
+	          & = \dfrac{1}{2}\int \odif[sep-end=\medspace]{x} \dfrac{1}{x\sqrt{\tfrac{km}{L2}x^{2} + \tfrac{2Em}{L^{2}}x - 1}}.
+\end{align*}
+
+Por lo que,
+
+\begin{align*}
+	\theta(x) & = \dfrac{1}{2}\arcsin \Biggl[\dfrac{\bigl(\tfrac{2Em}{L^{2}}x\bigr) - 2}{\abs{x}\sqrt{\biggl(\tfrac{2Em}{L^{2}}\biggr)^{2} + 4 \Biggl(\tfrac{km}{L^{2}}\Biggr)}}\Biggr] + \theta_{0}, \\
+	          & = \dfrac{1}{2} \arcsin \Biggl[\dfrac{\tfrac{Em}{L^{2}}r^{2} - 1}{r^{2}\sqrt{\tfrac{E^{2}m^{2}}{L^{4}} + \tfrac{km}{L^{2}}}}\Biggr] + \theta_{0}.
+\end{align*}
+
+O bien,
+
+\begin{align*}
+	\sin(2(\theta - \theta_{0})) & = \dfrac{\tfrac{Em}{L^{2}}r^{2} - 1}{\tfrac{Em}{L^{2}}r^{2}\sqrt{1 + \tfrac{kL^{2}}{mE}}},                  \\
+	\sin(2(\theta - \theta_{0})) & = \tfrac{1}{\sqrt{1 + \tfrac{kL^{2}}{mE}}} - \dfrac{\tfrac{L^{2}}{Em}}{r^{2}\sqrt{1 + \tfrac{kL^{2}}{mE}}}.
+\end{align*}
+
+Definimos las siguiente constantes:
+
+\begin{align}
+	\alpha      & = \dfrac{L^{2}}{Em},             \\
+	\varepsilon & = \sqrt{1 + \tfrac{kL^{2}}{mE}}.
+\end{align}
+
+Así,
+
+\begin{align*}
+	\sin(2(\theta - \theta_{0})) & = \dfrac{1}{\varepsilon} - \dfrac{\alpha}{r^{2}\varepsilon}, \\
+	\dfrac{\alpha}{r^{2}} = 1 + \varepsilon\sin(2(\theta - \theta_{0})).
+\end{align*}
+
+Como queremos que \(r\) sea el mínimo en \(\theta = 0\), elegimos
+\(\theta_{0} = \tfrac{\pi}{4}\),
+
+\begin{align*}
+	\alpha & = r^{2} + \varepsilon r^{2}\cos(2\theta),                         \\
+	\alpha & = r^{2} + \varepsilon r^{2}(\cos^{2}(\theta) - \sin^{2}(\theta)).
+\end{align*}
+
+Escribiendo la expresión anterior en coordenadas cartesianas
+para determinar la ec. de la cónica que describe a la órbita, i.e.
+
+\begin{align}
+	\alpha        & = x^{2} + y^{2} + \varepsilon(x^{2} - y^{2}),                                   \\
+	\Aboxedmain{1 & = \dfrac{1 + \varepsilon}{\alpha}x^{2} + \dfrac{1 - \varepsilon}{\alpha}y^{2},}
+\end{align}
+
+donde \(\varepsilon > 0, \alpha > 0\). Esta ecuación corresponde a
+una hipérbola.
 \end{document}
