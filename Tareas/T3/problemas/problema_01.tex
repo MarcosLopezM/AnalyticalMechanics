@@ -11,5 +11,63 @@
 
 	Muestra que si \(k\) decrece a la mitad de su valor original,
 	entonces la órbita de la partícula se vuelve parabólica.
+
+	\startsolution
+
+	Sabemos que las órbitas parabólicas surgen cuando \(E = 0\), por lo cual nos gustaría
+	analizar la conservación de la energía. Primero calculamos el potencial a partir de
+	la fuerza,
+
+	\begin{align}
+		U & = - \int \odif[sep-end=\medspace]{r} \biggl(\dfrac{-k}{r^{2}}\biggr),\nonumber \\
+		U & = - \dfrac{k}{r}.\label{eq:PotentialU-P1}
+	\end{align}
+
+	Iremos construyendo la expresión para la energía total del sistema, comenzando por el
+	potencial efectivo,
+
+	\begin{equation}
+		U_{eff}(r) = \dfrac{L^{2}}{2mr^{2}} - \dfrac{k}{r}.
+		\label{eq:EffectivePotential-P1}
+	\end{equation}
+
+	Por otro lado, sabemos que para las fuerzas que se pueden obtener a partir de un potencial,
+	podemos escribir la energía cinética, para este caso en particular, como:
+
+	\begin{align}
+		T & = -\dfrac{1}{2}U,\nonumber             \\
+		T & = \dfrac{k}{2r}.\label{eq:KineticE-P1}
+	\end{align}
+
+	Ahora, obtenemos el valor de \(r\) para el que la energía es mínima, i.e.
+
+	\begin{align*}
+		\pdv{U_{eff}}{r}                                    & = -\dfrac{L^{2}}{mr^{3}} + \dfrac{k}{r^{2}} = 0 , \\
+		\Biggl(kr - \dfrac{L^{2}}{m}\Biggr)\dfrac{1}{r^{3}} & = 0,
+	\end{align*}
+
+	tal que \(r_{1} = \infty\) y
+
+	\begin{align}
+		kr_{0} - \dfrac{L^{2}}{m} & = 0 ,                                      \\
+		r_{0}                     & = \dfrac{L^{2}}{mk}.\label{eq:RMinimum-P1}
+	\end{align}
+
+	Sustituyendo la \zcref{eq:RMinimum-P1} en la \zcref{eq:EffectivePotential-P1},
+
+	\begin{align*}
+		U_{eff}(r_{0})            & = \dfrac{L^{2}}{2m \biggl(\tfrac{L^{2}}{mk}\biggr)^{2}} - \dfrac{k}{\biggl(\dfrac{L^{2}}{mk}\biggr)}, \\
+		                          & = \dfrac{m^{2}k^{2}L^{2}}{2mL^{4}} - \dfrac{mk^{2}}{L^{2}},                                           \\
+		                          & = \dfrac{mk^{2}}{2L^{2}} - \dfrac{mk^{2}}{L^{2}},                                                     \\
+		                          & = -\dfrac{mk^{2}}{2L^{2}},                                                                            \\
+		\Aboxedsec{U_{eff}(r_{0}) & = -\dfrac{k}{2r_{0}}.}
+	\end{align*}
+
+	Entonces, ya no hace falta que \(k^{\prime} = \tfrac{k}{2}\), puesto que la energía total es
+
+	\begin{align*}
+		E             & = \dfrac{k}{2r_{0}} - \dfrac{k}{2r_{0}}, \\
+		\Aboxedmain{E & = 0.}
+	\end{align*}
 \end{problema}
 \end{document}
