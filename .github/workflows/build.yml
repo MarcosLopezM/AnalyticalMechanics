@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "Tareas/T3/**"
+      - "Tareas/T4/**"
 
 jobs:
   build-tarea-2:
@@ -23,5 +24,15 @@ jobs:
       tex_name: main
       out_name: "Tarea3"
       send_it: true
+      email_to: "marcoslm@ciencias.unam.mx"
+    secrets: inherit
+
+  Build-Tarea4:
+    uses: MarcosLopezM/latex-workflow/.github/workflows/build-pdf.yml@main
+    with:
+      relative_path: Tareas/T4
+      tex_name: main
+      out_name: "Tarea4"
+      # send_it: true
       email_to: "marcoslm@ciencias.unam.mx"
     secrets: inherit
