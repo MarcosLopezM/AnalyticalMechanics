@@ -6,5 +6,117 @@
 	in terms of its Cartesian coordinates \((x, y, z)\), with \(z\) measure
 	vertically upward. Find the three Euler-Lagrange equations and show that
 	they are exactly what you would expect for the equations of motion.
+
+	\startsolution
+
+	Sabemos que el lagrangiano está dado por
+
+	\begin{equation}
+		L = T - V,
+		\label{eq:lagrangian-def}
+	\end{equation}
+
+	con \(T\) la energía cinética y \(V\) la energía potencial.
+
+	Para el movimiento de un proyectil sabemos que la energía cinética es
+
+	\begin{equation*}
+		T = \dfrac{1}{2}m\dot{x}^{2} + \dfrac{1}{2}m\dot{y}^{2}.
+	\end{equation*}
+
+	Sin embargo, estamos considerando el caso en tres dimensiones, i.e.
+
+	\begin{equation}
+		T = \dfrac{1}{2}m(\dot{x}^{2} + \dot{y}^{2} + \dot{z}^{2}).
+		\label{eq:T-p2}
+	\end{equation}
+
+	Por otro lado, la energía es
+
+	\begin{equation}
+		V = mgz.
+		\label{eq:V-p2}
+	\end{equation}
+
+	Sustituyendo las \zcref{eq:T-p2,eq:V-p2} en la \zcref{eq:lagrangian-def},
+	tenemos que el Lagrangiano queda como
+
+	\begin{equation}
+		L = \dfrac{1}{2}m(\dot{x}^{2} + \dot{y}^{2} + \dot{z}^{2}) - mgz.
+		\label{eq:lagragian-p2}
+	\end{equation}
+
+	Recordando que las ecuaciones de Euler-Lagrange son
+
+	\begin{equation*}
+		\odv*{\Biggl(\pdv{L}{\dot{q_{i}}}\Biggr)}{t} - \pdv{L}{q_{i}} = 0.
+	\end{equation*}
+
+	Por lo cual tendremos tres ecuaciones de movimiento, una para coordenada,
+
+	\begin{align*}
+		\odv*{\Biggl(\pdv{L}{\dot{x}}\Biggr)}{t} - \pdv{L}{x} & = 0, \\
+		\odv*{\Biggl(\pdv{L}{\dot{y}}\Biggr)}{t} - \pdv{L}{y} & = 0, \\
+		\odv*{\Biggl(\pdv{L}{\dot{z}}\Biggr)}{t} - \pdv{L}{z} & = 0.
+	\end{align*}
+
+	Así, para la coordenadas \(x\),
+
+	\begin{align}
+		\odv*{(m \dot{x})}{t} - \pdv{L}{x} & = 0,\nonumber           \\
+		m \ddot{x}                         & = 0,\nonumber           \\
+		\ddot{x}                           & = 0.\label{eq:EOM-x-p2}
+	\end{align}
+
+	Para \(y\),
+
+	\begin{align}
+		\odv*{(m \dot{y})}{t} - \pdv{L}{y} & = 0,\nonumber \\
+		m \ddot{y}                         & = 0,\nonumber \\
+		\ddot{y} = 0.\label{eq:EOM-y-p2}
+	\end{align}
+
+	Y, finalmente, para \(z\),
+
+	\begin{align}
+		\odv*{(m \dot{z})}{t} + mg & = 0,\nonumber            \\
+		m \ddot{z}                 & = -mg,\nonumber          \\
+		\ddot{z}                   & = -g.\label{eq:EOM-z-p2}
+	\end{align}
+
+	Resolviendo las \zcref{eq:EOM-x-p2,eq:EOM-y-p2,eq:EOM-z-p2},
+
+	\begin{align*}
+		\Longrightarrow\; \dot{x}                       & = v_{ix},                                             \\
+		\int_{x_{i}}^{x_{f}}\odif[sep-end=\medspace]{x} & = \int_{0}^{t}\odif[sep-end=\medspace]{t^{*}} v_{ix}, \\
+		x_{f} - x_{i}                                   & = v_{ix}t,                                            \\
+		\Aboxedmain{x_{f}                               & = x_{i} + v_{ix}t.}                                   \\
+		\Longrightarrow\; \dot{y}                       & = v_{iy},                                             \\
+		\int_{y_{i}}^{y_{f}}\odif[sep-end=\medspace]{y} & = \int_{0}^{t}\odif[sep-end=\medspace]{t^{*}} v_{iy}, \\
+		y_{f} - y_{i}                                   & = v_{iy}t,                                            \\
+		\Aboxedmain{y_{f}                               & = y_{i} + v_{iy}t.}
+	\end{align*}
+
+	Sabemos que la aceleración es constante en la dirección \(z\), entonces
+
+	\begin{equation*}
+		\dot{z} = -gt + c,
+	\end{equation*}
+
+	con \(c\) una constante de integración. Además, a \(t = 0 \implies \dot{z} = v_{iz}\),
+
+	\begin{align}
+		\dot{z}(0) & = v_{iz} = -g(0) + c, \\
+		c          & = v_{iz}.
+	\end{align}
+
+	Integrando nuevamente,
+
+	\begin{align*}
+		z_{f} - z_{i}     & = v_{iz}t - \dfrac{1}{2}gt^{2},          \\
+		\Aboxedmain{z_{f} & = z_{i} + v_{iz}t - \dfrac{1}{2}gt^{2}.}
+	\end{align*}
+
+	Por lo tanto, obtenemos las ecuaciones de movimiento para un proyectil.
 \end{problema}
 \end{document}
