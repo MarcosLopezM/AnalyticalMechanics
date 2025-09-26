@@ -18,7 +18,7 @@
 Obtenemos las ecuaciones de Euler-Lagrange,
 
 \begin{align*}
-	\pdv{L}{\dot{\bm{r}}} & = -mc^{2}\pdv*{\Biggl[\sqrt{1 - \dfrac{\dot{\bm{r}}^{2}}{c^{2}}} - U(\bm{r})\Biggr]}{\dot{\bm{r}}},\nonumber                             \\
+	\pdv{L}{\dot{\bm{r}}} & = \pdv*{\Biggl[-mc^{2}\sqrt{1 - \dfrac{\dot{\bm{r}}^{2}}{c^{2}}} - U(\bm{r})\Biggr]}{\dot{\bm{r}}},\nonumber                             \\
 	                      & = -mc^{2}\dfrac{\tfrac{1}{2}\Bigl(-\tfrac{2}{c^{2}}\dot{\bm{r}}\Bigr)}{\sqrt{1 - \dfrac{\dot{\bm{r}}^{2}}{c^{2}}} - U(\bm{r})},\nonumber \\
 	\odv{L}{\dot{\bm{r}}} & = \dfrac{m \dot{\bm{r}}}{\sqrt{1 - \dfrac{\dot{\bm{r}}^{2}}{c^{2}}}}.
 \end{align*}
@@ -32,13 +32,13 @@ En el límite \(\abs{\dot{\bm{r}}} \lll c\), la expresión anterior se reduce a
 Por lo que las ecuaciones de Euler-Lagrange son
 
 \begin{equation*}
-	\odv{(m \dot{\bm{r}})}{t} = \pdv{U(r)}{\bm{r}},
+	\odv{(m \dot{\bm{r}})}{t} = -\pdv{U(r)}{\bm{r}},
 \end{equation*}
 
 pero \(\bm{p} = m \dot{\bm{r}}\), pero
 
 \begin{align*}
-	\odv{\bm{p}}{t}    & = \pdv{U(\bm{r})}{\bm{r}} = \bm{F}, \\
+	\odv{\bm{p}}{t}    & = -\pdv{U(\bm{r})}{\bm{r}} = \bm{F}, \\
 	\Aboxedmain{\bm{F} & = \odv{\bm{p}}{t}.}
 \end{align*}
 
