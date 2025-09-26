@@ -12,4 +12,35 @@
 	show that it reduces to Newton's equation of motion in the limit
 	\( \abs{\boldvect\vect{\dot{r}}} \lll c\).
 \end{problema}
+
+\startsolution
+
+Obtenemos las ecuaciones de Euler-Lagrange,
+
+\begin{align*}
+	\pdv{L}{\dot{\bm{r}}} & = -mc^{2}\pdv*{\Biggl[\sqrt{1 - \dfrac{\dot{\bm{r}}^{2}}{c^{2}}} - U(\bm{r})\Biggr]}{\dot{\bm{r}}},\nonumber                             \\
+	                      & = -mc^{2}\dfrac{\tfrac{1}{2}\Bigl(-\tfrac{2}{c^{2}}\dot{\bm{r}}\Bigr)}{\sqrt{1 - \dfrac{\dot{\bm{r}}^{2}}{c^{2}}} - U(\bm{r})},\nonumber \\
+	\odv{L}{\dot{\bm{r}}} & = \dfrac{m \dot{\bm{r}}}{\sqrt{1 - \dfrac{\dot{\bm{r}}^{2}}{c^{2}}}}.
+\end{align*}
+
+En el límite \(\abs{\dot{\bm{r}}} \lll c\), la expresión anterior se reduce a
+
+\begin{equation*}
+	\pdv{L}{\dot{\bm{r}}} = m \dot{\bm{r}}.
+\end{equation*}
+
+Por lo que las ecuaciones de Euler-Lagrange son
+
+\begin{equation*}
+	\odv{(m \dot{\bm{r}})}{t} = \pdv{U(r)}{\bm{r}},
+\end{equation*}
+
+pero \(\bm{p} = m \dot{\bm{r}}\), pero
+
+\begin{align*}
+	\odv{\bm{p}}{t}    & = \pdv{U(\bm{r})}{\bm{r}} = \bm{F}, \\
+	\Aboxedmain{\bm{F} & = \odv{\bm{p}}{t}.}
+\end{align*}
+
+Por lo tanto, recuperamos la expresión de la segunda ley de Newton.
 \end{document}
