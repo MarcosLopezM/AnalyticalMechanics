@@ -6,5 +6,61 @@
 	\(z = cr^{2}\). At equilibrium, the bead rotates in a circle of radius \(R\)
 	when the wire is rotating about its vertical symmetry axis with angular velocity
 	\(\omega\). Find the value of \(c\).
+
+	\startsolution
+
+	Usando coordenadas cilíndricas debido a la simetría del prolema, tenemos que
+
+	\begin{align*}
+		T & = \dfrac{1}{2}m \dot{r}^{2} + \dfrac{1}{2}m \dot{z}^{2} + \dfrac{1}{2}m(r \dot{\theta})^{2}, \\
+		U & = mgz,
+	\end{align*}
+
+	tal que en \(z = 0 \implies U = 0\).
+
+	Usando la constricción que nos dice que la cuenta se desliza sobre la parábola
+	podemos escribir el Lagrangiano en función de \(r\),
+
+	\begin{align*}
+		z       & = cr^{2},      \\
+		\dot{z} & = 2cr \dot{r}.
+	\end{align*}
+
+	Además, recordamos que la velocidad angular depende del tiempo, i.e.
+
+	\begin{align*}
+		\theta       & = \omega t, \\
+		\dot{\theta} & = \theta.
+	\end{align*}
+
+	A partir de las expresiones anteriores, podemos escribir el Lagrangiano que
+	describe la dinámica del sistema como
+
+	\begin{equation*}
+		L  = \dfrac{1}{2}m(\dot{r}^{2} + 4c^{2}r^{2} \dot{r} + r^{2}\omega^{2}) - mgcr^{2}.
+	\end{equation*}
+
+	Obtenemos la ecuación de movimiento a paritr de la ecuación de Euler-Lagrange,
+
+	\begin{align*}
+		\odv*{\Biggl[\dfrac{1}{2}m \Bigl(2 \dot{r} + 8c^{2}r^{2} \dot{r}\Bigr)\Biggr]}{t} - \dfrac{1}{2}m \Bigl(8c^{2}r \dot{r}^{2} + 2\theta^{2}r\Bigr) + 2mgcr & = 0, \\
+		m \ddot{r} + 8mc^{2}r \dot{r}^{2} + 4mc^{2}r^{2}\ddot{r} - 4mc^{2}r \dot{r}^{2} - m\omega^{2}r + 2mgcr                                                   & = 0, \\
+		(1 + 4c^{2}r^{2})\ddot{r} + (4mc^{2}r)\dot{r}^{2} + (2gc - \omega^{2})r                                                                                  & = 0.
+	\end{align*}
+
+	Y debido a que la partícula rota en un círculo de radio \(r = R = cte\), la
+	ecuación de movimiento se reduce a
+
+	\begin{equation*}
+		(2gc - \omega^{2})R = 0.
+	\end{equation*}
+
+	Finalmente, resolver la expresión anterior para determinar el valor de \(c\),
+
+	\begin{align*}
+		2gc           & = \omega^{2},              \\
+		gc            & = \dfrac{\omega^{2}}{2},   \\
+		\Aboxedmain{c & = \dfrac{\omega^{2}}{2g}.}
+	\end{align*}
 \end{problema}
 \end{document}
