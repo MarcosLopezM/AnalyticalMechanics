@@ -11,5 +11,54 @@
 
 	also satisfies Euler-Lagrange's equations where \(F\) is any arbitrary,
 	but differentiable, function of its arguments.
+
+	\startsolution
+
+	Calculamos los elementos que componen a las ecuaciones de
+	Euler-Lagrange para \(L^{\prime}\),
+
+	Calculamos los elementos que componen a las ecuaciones de
+	Euler-Lagrange,
+
+	\begin{align}
+		\pdv{L^{\prime}}{q_{i}}       & = \pdv{L}{q_{i}} + \pdv*{\Biggl(\odv{F}{t}\Biggr)}{q_{i}}\label{eq:second-term-L},                         \\
+		\pdv{L^{\prime}}{\dot{q_{i}}} & = \pdv{L}{\dot{q_{i}}} + \pdv*{\unbr{\Biggl(\odv{F}{t}\Biggr)}_{(A)}}{\dot{q_{i}}}.\label{eq:first-term-L}
+	\end{align}
+
+	Usando la regla de la cadena, el término \((A)\) se puede escribir como
+
+	\begin{equation*}
+		\odv{F(q_{i}, t)}{t} = \pdv{F(q_{i}, t)}{q_{i}}\dot{q}_{i} + \pdv{F(q_{i}, t)}{t}.
+	\end{equation*}
+
+	Calculando la derivada respecto a \(\dot{q}_{i}\),
+
+	\begin{equation*}
+		\pdv*{\Biggl(\odv{F}{t}\Biggr)}{\dot{q}_{i}} = \pdv{F}{q_{i}}.
+	\end{equation*}
+
+	Sustituyendo en la \zcref{eq:first-term-L},
+
+	\begin{equation*}
+		\pdv{L^{\prime}}{\dot{q_{i}}}  = \pdv{L}{\dot{q_{i}}} + \pdv{F}{q_{i}}.
+	\end{equation*}
+
+	Derivando respecto al tiempo,
+
+	\begin{equation*}
+		\odv*{\Biggl(\pdv{L^{\prime}}{\dot{q}_{i}}\Biggr)}{t} = \odv*{\Biggl(\pdv{L}{\dot{q}_{i}}\Biggr)}{t} + \odv*{\Biggl(\pdv{F}{q_{i}}\Biggr)}{t}.
+	\end{equation*}
+
+	Por lo que las ecuaciones de Euler-Lagrange para \(L^{\prime}\) son
+
+	\begin{align*}
+		\odv*{\Biggl(\pdv{L^{\prime}}{\dot{q}_{i}}\Biggr)}{t} - \pdv{L^{\prime}}{q_{i}} & = \odv*{\Biggl(\pdv{L}{\dot{q}_{i}}\Biggr)}{t} + \odv*{\Biggl(\pdv{F}{q_{i}}\Biggr)}{t} - \pdv{L}{q_{i}} - \pdv*{\Biggl(\odv{F}{t}\Biggr)}{q_{i}},                           \\
+		\odv*{\Biggl(\pdv{L^{\prime}}{\dot{q}_{i}}\Biggr)}{t} - \pdv{L^{\prime}}{q_{i}} & = \unbr{\odv*{\Biggl(\pdv{L}{\dot{q}_{i}}\Biggr)}{t} - \pdv{L}{q_{i}}}_{(B)} + \unbr{\odv*{\Biggl(\pdv{F}{q_{i}}\Biggr)}{t} - \pdv*{\Biggl(\odv{F}{t}\Biggr)}{q_{i}}.}_{(C)}
+	\end{align*}
+
+	De esta forma, el término \((B)\) satisface las ecuaciones de
+	Euler-Lagrange, mientras que el término \((C)\), por ser \(F\) una función
+	diferenciable, es igual a cero, i.e. \(\odv*{\Bigl(\pdv{F}{q_{i}}\Bigr)}{t} = \pdv*{\Bigl(\odv{F}{t}\Bigr)}{q_{i}}\). Por lo tanto, \( L^{\prime}\) satisface las
+	ecuaciones de Euler-Lagrange.
 \end{problema}
 \end{document}
