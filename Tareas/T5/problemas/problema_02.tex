@@ -6,5 +6,91 @@
 	in cylindrical polar coordinates is \(\rho = b, z = a\phi\), with
 	the potential \( V = \tfrac{1}{2}k(\rho^{2} + z^{2})\). Use the
 	Lagrange multiplier method to find the constraint forces.
+
+	\startsolution
+
+	Tenemos que la energía cinética del sistema es
+
+	\begin{equation*}
+		T = \dfrac{1}{2}m \Bigl(\dot{\rho}^{2} + \dot{z}^{2} + \rho^{2}\dot{\phi}^{2}\Bigr).
+	\end{equation*}
+
+	Por lo que el Lagrangiano es
+
+	\begin{equation*}
+		L = \dfrac{1}{2}m \Bigl(\dot{\rho}^{2} + \dot{z}^{2} + \rho^{2}\dot{\phi}^{2}\Bigr) - \dfrac{1}{2}k(\rho^{2} + z^{2}).
+	\end{equation*}
+
+	Recordando la expresión de las EOM en presencia de constricciones
+
+	\begin{equation*}
+		\pdv{L}{x} - \odv*{\Bigl(\pdv{L}{\dot{q}_{i}}\Bigr)}{t} + \lambda_{k}\pdv{f_{k}}{q_{i}} = 0.
+	\end{equation*}
+
+	Así, para \(\rho\),
+
+	\begin{align}
+		-k\rho + m\rho \phi^{2} - \odv{m\dot{\rho}}{t} + \lambda_{1} & = 0,\nonumber \\
+		m \ddot{\rho} - m\rho \dot{\phi}^{2} + k\rho - \lambda_{1}   & = 0.
+		\label{eq:eom-rho}
+	\end{align}
+
+	Para \(\phi\),
+
+	\begin{align}
+		-\odv{(m\rho^{2} \dot{\phi})}{t} - a\lambda_{1}                     & = 0,\nonumber \\
+		2m\rho \dot{\rho} \dot{\phi} + m\rho^{2} \ddot{\phi} + a\lambda_{2} & = 0.
+		\label{eq:eom-phi}
+	\end{align}
+
+	Y, finalmente, para \(z\),
+
+	\begin{align}
+		-kz - \odv{(m \dot{z})}{t} + \lambda_{2} & = 0,\nonumber \\
+		m \ddot{z} + kz - \lambda_{2}            & = 0.
+		\label{eq:eom-z}
+	\end{align}
+
+	Resolviendo la \zcref{eq:eom-rho} para \(\lambda_{1}\),
+
+	\begin{equation*}
+		\lambda_{1} = -m \ddot{\rho} + m\rho \dot{\phi}^{2} + k\rho.
+	\end{equation*}
+
+	Usando la constricción \(\rho = b \implies \ddot{\rho} = \ddot{\rho} = 0\),
+
+	\begin{empheq}[box = \mainresult]{equation*}
+		\lambda_{1} = b(m \dot{\phi}^{2} + k).
+	\end{empheq}
+
+	Repetimos el mismo procedimiento para \(\lambda_{2}\), sustituyendo
+	las constricciones en \zcref{ eq:eom-phi},
+
+	\begin{alignat*}{2}
+		\phi & = \dfrac{z}{a} & {}\implies{} & \dot{\phi} = \dfrac{\dot{z}}{a} \weq \ddot{\phi} = \dfrac{\ddot{z}}{a}, \\
+		\rho & = b            & {}\implies{} & \dot{\rho} = 0.
+	\end{alignat*}
+
+	Así,
+
+	\begin{align}
+		2m\rho \dot{\rho} \dot{\phi} + m\rho^{2} \ddot{\phi} + a\lambda_{2} & = 0,\nonumber \\
+		mb^{2}\Bigl(\dfrac{\ddot{z}}{a}\Bigr) + a\lambda_{2}                & = 0.
+		\label{eq:l2-2nd-eom}
+	\end{align}
+
+	Ahora, despejamos \(\ddot{z}\) de \zcref{eq:eom-z},
+
+	\begin{equation*}
+		\ddot{z} = \dfrac{\lambda_{2} - kz}{m}.
+	\end{equation*}
+
+	Sustituyendo en la \zcref{eq:l2-2nd-eom},
+
+	\begin{align*}
+		\dfrac{b^{2}(\lambda_{2} - kz)}{a} + a\lambda_{2} & = 0,                               \\
+		\dfrac{b^{2} + a^{2}}{a}\lambda_{2}               & = \dfrac{b^{2}kz}{a},              \\
+		\Aboxedmain{\lambda_{2}                           & = \dfrac{b^{2}kz}{a^{2} + b^{2}}.}
+	\end{align*}
 \end{problema}
 \end{document}
