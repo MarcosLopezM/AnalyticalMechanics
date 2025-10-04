@@ -11,5 +11,43 @@
 
 	Show that the resulting equation of motion is identical to that which
 	arises from the more traditional Lagrangian, \(L = \tfrac{1}{2}m \dot{x}^{2} - V(x)\).
+
+	\startsolution
+
+	Calculamos los elementos de las ecuaciones de Euler-Lagrange
+
+	\begin{align*}
+		\pdv{L}{\dot{x}}                       & = \dfrac{4}{12}m^{2}\dot{x}^{3} + 2m \dot{x}V(x),                                   \\
+		\odv*{\Bigl(\pdv{L}{\dot{x}}\Bigr)}{t} & = m^{2}\dot{x}^{2}\ddot{x} + 2m \Biggl(\ddot{x}V(x) + \dot{x}^{2}\pdv{V}{x}\Biggr), \\
+		\pdv{L}{x}                             & = m \dot{x}^{2}\pdv{V}{x} - 2V \pdv{V}{x}.
+	\end{align*}
+
+	Así,
+
+	\begin{align*}
+		m^{2} \dot{x}^{2}\ddot{x} + 2m \Biggl(\ddot{x}V(x) + \dot{x}^{2}\pdv{V}{x}\Biggr) -
+		\Biggl(m \dot{x}^{2}\pdv{V}{x} - 2V \pdv{V}{x}\Biggr) = 0,                               \\
+		m^{2}\dot{x}^{2}\ddot{x} + 2m \ddot{x}V + 2m \dot{x}^{2}\pdv{V}{x} 0 m \dot{x}^{2}\pdv{V}{x}
+		+ 2V \pdv{V}{x}                                                                   & = 0, \\
+		(m \dot{x}^{2} + 2V)m \ddot{x} + \pdv{V}{x}(m \dot{x}^{2} + 2V)                   & = 0, \\
+		2\Biggl(m \ddot{x} + \pdv{V}{x}\Biggr)\Biggl(\dfrac{1}{2}m \dot{x}^{2} + V\Biggr) & = 0, \\
+		\Biggl(m \ddot{x} + \pdv{V}{x}\Biggr)\Biggl(\dfrac{1}{2}m \dot{x}^{2} + V\Biggr)  & = 0.
+	\end{align*}
+
+	De esta manera tenemos que si la energía cinética no es igual a la energía
+	potencial recuperamos la segunda ley de Newton, i.e.
+
+	\begin{empheq}[box = \mainresult]{equation*}
+		m \ddot{x} = -\pdv{V}{x}.
+	\end{empheq}
+
+	Que es la misma ecuación de movimiento que se obtiene del Lagrangiano
+	tradicional,
+
+	\begin{align*}
+		\odv*{\Biggl(\pdv{L}{\dot{x}}\Biggr)}{t} - \pdv{L}{x} & = 0,            \\
+		m \ddot{x} + \pdv{V}{x}                               & = 0,            \\
+		\Aboxedmain{m \ddot{x}                                & = -\pdv{V}{x}.}
+	\end{align*}
 \end{problema}
 \end{document}
