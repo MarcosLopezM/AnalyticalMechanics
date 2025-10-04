@@ -8,5 +8,136 @@
 	(opening upward). Obtain the force of constraint. Prove that for a
 	given energy and angular momentum about the symmetry axis there are
 	a minimum and maximum height to which the particle will go.
+
+	\startsolution
+
+	Por el problema 4 de la tarea anterior sabemos que el Lagrangiano del
+	sistema es
+
+	\begin{equation}
+		L = \dfrac{1}{2}m \dot{r}^{2} + \dfrac{1}{2}m \dot{z}^{2} + \dfrac{1}{2}mr^{2} \dot{\theta}^{2}
+		- mgz.
+		\label{eq:lagrangian-p3}
+	\end{equation}
+
+	La constricción se debe a que el movimiento está restringido a la superficie del
+	paraboloide, cuya ecuación es
+
+	\begin{equation*}
+		f(r, z) = z - cr^{2} = 0.
+	\end{equation*}
+
+	De esta manera, tenemos que la EOM para \(r\) es
+
+	\begin{align}
+		mr \dot{\theta}^{2} - m \ddot{r} - 2\lambda cr         & = 0,\nonumber \\
+		\ddot{r} - r \dot{\theta}^{2} + \dfrac{2\lambda cr}{m} & = 0.
+		\label{eq:eom-r}
+	\end{align}
+
+	Para \(\theta\),
+
+	\begin{equation*}
+		\odv{(mr^{2}\dot{\theta})}{t} = 0
+	\end{equation*}
+
+	Por lo que tenemos una cantidad conservada, i.e. el momento angular se conserva.
+
+	\begin{equation}
+		\dot{\theta} = \dfrac{L}{mr^{2}}.
+		\label{eq:conservation-angular-momentum}
+	\end{equation}
+
+	La EOM para \(z\) es
+
+	\begin{equation}
+		-mg - m \ddot{z} + \lambda = 0.
+		\label{eq:eom-z-p3}
+	\end{equation}
+
+	Resolviendo la \zcref{eq:eom-z-p3} para \(\lambda\),
+
+	\begin{equation*}
+		\lambda = m(\ddot{z} + g),
+	\end{equation*}
+
+	pero por la constricción sabemos que \(\ddot{z} = 2c(\dot{r}^{2} + r \ddot{r})\),
+	entonces
+
+	\begin{equation}
+		\lambda = m \Bigl[2c(\dot{r}^{2} + r \ddot{r}) + g\Bigr].
+		\label{eq:lagrange-multiplier}
+	\end{equation}
+
+	Ahora sustituimos la \zcref{eq:conservation-angular-momentum} en
+	la \zcref{eq:eom-r} y resolviendo para \(\ddot{r}\),
+
+	\begin{align*}
+		\ddot{r} - r \Biggl(\dfrac{L^{2}}{m^{2}r^{4}}\Biggr) + \dfrac{2\lambda cr}{m} & = 0,                                                  \\
+		\ddot{r}                                                                      & = \dfrac{L^{2}}{m^{2}r^{3}} - \dfrac{2\lambda cr}{m}.
+	\end{align*}
+
+	Por lo que \(\lambda\) queda como:
+
+	\begin{align*}
+		\lambda                  & = m \Biggl[2c \Biggl(\dot{r}^{2} + r \Biggl(\dfrac{L^{2}}{m^{2}r^{3}} - \dfrac{2\lambda cr}{m}\Biggr)\Biggr) + g\Biggr], \\
+		                         & = m \Biggl[2c \Biggl(\dot{r}^{2} + \dfrac{L^{2}}{m^{2}r^{2}} - \dfrac{2\lambda cr^{2}}{m}\Biggr) + g\Biggr],             \\
+		                         & = 2mc \dot{r}^{2} + \dfrac{2L^{2}c}{mr^{2}} - 4\lambda c^{2}r^{2} + mg,                                                  \\
+		(1 + 4c^{2}r^{2})\lambda & = 2mc \dot{r}^{2} + \dfrac{2L^{2}c}{mr^{2}} + mg,                                                                        \\
+		\Aboxedmain{\lambda      & = \dfrac{2m^{2}cr^{2} \dot{r}^{2} + 2L^{2}c + m^{2}r^{2}g}{mr^{2}(1 + 4c^{2}r^{2})}.}
+	\end{align*}
+
+	Ahora, para determinar la altura máxima y mínima, partimos de la conservación
+	de la energía, \(E = T + U\), i.e.
+
+	\begin{equation*}
+		E = \dfrac{1}{2}m \dot{r}^{2} + \dfrac{1}{2}m \dot{z}^{2} + \dfrac{1}{2}mr^{2} \dot{\theta}^{2} + mgz.
+	\end{equation*}
+
+	Escribiendo todo en términos de \(z\) usando las constricción y la conservación
+	del momento angular, tenemos que
+
+	\begin{align*}
+		\dot{z}          & = 2cr \dot{r},                                                                     \\
+		\dot{z}^{2}      & = 4c^{2}r^{2} \dot{r}^{2} \implies \dot{r}^{2} = \dfrac{\dot{z}^{2}}{4c^{2}r^{2}}, \\
+		\dot{\theta}     & = \dfrac{L}{mr^{2}},                                                               \\
+		\dot{\theta}^{2} & = \dfrac{L^{2}}{m^{2}r^{4}}.
+	\end{align*}
+
+	Así,
+
+	\begin{align*}
+		E & = \dfrac{1}{2}m \Biggl(\dfrac{\dot{z}^{2}}{4c^{2}r^{2}}\Biggr) + \dfrac{1}{2}m \dot{z}^{2}
+		+ \dfrac{1}{2}mr^{2} \Biggl(\dfrac{L^{2}}{m^{2}r^{4}}\Biggr) + mgz,                            \\
+		E & = \dfrac{1}{2}m \Biggl(1 + \dfrac{1}{4cz}\Biggr)\dot{z}^{2} + \dfrac{cL^{2}}{2mz} + mgz.
+	\end{align*}
+
+	Recordamos que los puntos de retorno se obtienen cuando \(\dot{z} = 0\), por lo que
+	la expresión para la energía se reduce a
+
+	\begin{equation*}
+		E = \dfrac{cL^{2}}{2mz} + mgz.
+	\end{equation*}
+
+	Encontrando las raíces,
+
+	\begin{equation*}
+		z = \dfrac{E \pm \sqrt{E^{2} - 2gcL^{2}}}{2mg}.
+	\end{equation*}
+
+	De la expresión anterior tenemos que el máximo de \(z\) se alcanza cuando \(L = 0\), i.e.
+
+	\begin{align*}
+		z_{\text{máx}}             & = \dfrac{E + \sqrt{E^{2}}}{2mg}, \\
+		                           & = \dfrac{2E}{2mg},               \\
+		\Aboxedmain{z_{\text{máx}} & = \dfrac{E}{mg}.}
+	\end{align*}
+
+	Mientras que el mínimos es
+
+	\begin{align*}
+		z_{\text{mín}}             & = \dfrac{E - E}{2mg}, \\
+		\Aboxedmain{z_{\text{mín}} & = 0.}
+	\end{align*}
 \end{problema}
 \end{document}
