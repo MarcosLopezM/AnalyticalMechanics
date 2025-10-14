@@ -6,6 +6,7 @@ on:
       - "Tareas/T3/**"
       - "Tareas/T4/**"
       - "Tareas/T5/**"
+      - "Tareas/T6/**"
 
 jobs:
   build-tarea-2:
@@ -34,7 +35,7 @@ jobs:
       relative_path: Tareas/T4
       tex_name: main
       out_name: "Tarea4"
-      send_it: true
+      # send_it: true
       email_to: "marcoslm@ciencias.unam.mx"
     secrets: inherit
 
@@ -44,6 +45,16 @@ jobs:
       relative_path: Tareas/T5
       tex_name: main
       out_name: "Tarea5"
-      send_it: true
+      # send_it: true
+      email_to: "marcoslm@ciencias.unam.mx"
+    secrets: inherit
+
+  Build-Tarea6:
+    uses: MarcosLopezM/latex-workflow/.github/workflows/build-pdf.yml@main
+    with:
+      relative_path: Tareas/T6
+      tex_name: main
+      out_name: "Tarea6"
+      # send_it: true
       email_to: "marcoslm@ciencias.unam.mx"
     secrets: inherit
