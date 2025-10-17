@@ -17,5 +17,63 @@
 	\end{equation*}
 
 	where \(p_{x}\) is the generalized momentum conjugate to \(x\).
+
+	\startsolution
+
+	Calculamos el Hamiltoniano dado por
+
+	\begin{equation*}
+		H = p_{i}\dot{q}_{i} - L.
+	\end{equation*}
+
+	El momento generalizado es:
+
+	\begin{align*}
+		p_{x} & = \pdv{L}{\dot{x}} = m_{0}c^{2}\Biggl[-\dfrac{1}{2}\Bigl(1 - \dfrac{\dot{x}^{2}}{c^{2}}\Bigr)^{-1/2}\Bigl(-\dfrac{2 \dot{x}}{c^{2}}\Bigr)\Biggr], \\
+		p_{x} & = \dfrac{m_{0} \dot{x}}{\Bigl(1 - \dfrac{\dot{x}^{2}}{c^{2}}\Bigr)^{1/2}}.
+	\end{align*}
+
+	Resolviendo la expresión anterior para \(\dot{x}\),
+
+	\begin{align}
+		p_{x}\Bigl(1 - \dfrac{\dot{x}^{2}}{c^{2}}\Bigr)^{1/2}                        & = m_{0} \dot{x},\nonumber                                                   \\
+		p_{x}^{2}\Bigl(1 - \dfrac{\dot{x}^{2}}{c^{2}}\Bigr)                          & = m_{0}^{2} \dot{x}^{2},\nonumber                                           \\
+		\dfrac{p_{x}^{2}}{m_{0}^{2}} - \dfrac{p_{x}^{2} \dot{x}^{2}}{m_{0}^{2}c^{2}} & = \dot{x}^{2},\nonumber                                                     \\
+		\Biggl(1 + \dfrac{p_{x}^{2}}{m_{0}^{2}c^{2}}\Biggr) \dot{x}^{2}              & = \dfrac{p_{x}^{2}}{m_{0}^{2}},\nonumber                                    \\
+		\Aboxedmain{\dot{x}                                                          & = \dfrac{p_{x}}{m_{0}\Biggl(1 + \dfrac{p_{x}^{2}}{m_{0}^{2}c^{2}}\Biggr)}.}
+		\label{eq:x-derivative}
+	\end{align}
+
+	Por lo que el Hamiltoniano es
+
+	\begin{align*}
+		H & = p_{x} \dot{x} - L,                                                                                                 \\
+		  & = p_{x} \dot{x} + m_{0}c^{2}\Biggl[\Biggl(1 - \Bigl(1 - \dfrac{\dot{x}^{2}}{c^{2}}\Bigr)^{1/2}\Biggr) - V(x)\Biggr], \\
+		  & = p_{x} \dot{x} - m_{0}c^{2} + m_{0}c^{2}\Bigl(1 - \dfrac{\dot{x}^{2}}{c^{2}}\Bigr)^{1/2} + V(x).
+	\end{align*}
+
+	Sustituyendo la \zcref{eq:x-derivative} y simplificando,
+
+	\begin{align*}
+		H & = p_{x}\Biggl(\dfrac{p_{x}}{m_{0}\Bigl(1 + \tfrac{p_{x}^{2}}{m_{0}^{2}c^{2}}\Bigr)^{1/2}}\Biggr)
+		- m_{0}c^{2} + m_{0}c^{2}\Biggl[1 - \dfrac{1}{c^{2}}\Biggl(\dfrac{p_{x}^{2}}{m_{0}^{2}\Bigl(1 + \tfrac{p_{x}^{2}}{m_{0}^{2}c^{2}}\Bigr)}\Biggr)\Biggr]^{1/2} + V(x), \\
+		  & = \dfrac{p_{x}^{2}}{m_{0}\Bigl(1 + \tfrac{p_{x}^{2}}{m_{0}^{2}}\Bigr)^{1/2}} -
+		m_{0}c^{2} +
+		m_{0}c^{2}\Biggl[\dfrac{m_{0}^{2}c^{2} + p_{x}^{2} - p_{x}^{2}}{m_{0}^{2}c^{2} \Bigl(1 + \dfrac{p_{x}^{2}}{m_{0}^{2}c^{2}}\Bigr)}\Biggr]^{1/2}
+		+ V(x),                                                                                                                                                              \\
+		  & = \dfrac{p_{x}^{2}}{m_{0}\Bigl(1 + \tfrac{p_{x}^{2}}{m_{0}^{2}}\Bigr)^{1/2}} -
+		m_{0}c^{2}+ m_{0}c^{2}\Biggl(\dfrac{m_{0}c}{m_{0}c \Bigl(1 + \dfrac{p_{x}^{2}}{m_{0}^{2}c^{2}}\Bigr)^{1/2}}\Biggr)
+		+ V(x),                                                                                                                                                              \\
+		  & =	\dfrac{\tfrac{p_{x}^{2}}{m_{0}} + m_{0}c^{2}}{\Bigl(1 + \tfrac{p_{x}^{2}}{m_{0}^{2}c^{2}}\Bigr)} -
+		m_{0}c^{2} + V(x),                                                                                                                                                   \\
+		  & = \dfrac{m_{0}c^{2}\Bigl(1 + \tfrac{p_{x}^{2}}{m_{0}^{2}c^{2}}\Bigr)}{\Bigl(1 + \tfrac{p_{x}^{2}}{m_{0}^{2}c^{2}}\Bigr)} - m_{0}c^{2} + V(x).
+	\end{align*}
+
+	Por lo tanto, el Hamiltoniano es
+
+	\begin{empheq}[box = \mainresult]{equation*}
+		H = m_{0}c^{2}\Bigl(1 + \tfrac{p_{x}^{2}}{m_{0}^{2}c^{2}}\Bigr) -
+		m_{0}c^{2} + V(x).
+	\end{empheq}
 \end{problema}
 \end{document}
