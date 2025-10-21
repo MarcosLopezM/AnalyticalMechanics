@@ -7,5 +7,97 @@
 	equations of motion (tarea 4). What does such an addition do to the canonical
 	momenta and the Hamiltonian? Show that the equations of motion in terms of
 	the new Hamiltonian reduce to the original Hamilton's equations of motion.
+
+	\startsolution
+
+	Recordamos la forma del Lagrangiano \(L^{\prime}\),
+
+	\begin{equation*}
+		L^{\prime} = L + \odv{F(q_{i}, t)}{t}.
+	\end{equation*}
+
+	Ahora, calculamos el momento generalizado,
+
+	\begin{equation}
+		p_{i}^{\prime} = \pdv{L^{\prime}}{\dot{q}_{i}} = \pdv{L}{\dot{q}_{i}} +
+		\pdv*{\Biggl(\pdv{F}{t}\Biggr)}{\dot{q}_{i}}.
+	\end{equation}
+
+	Recordando que el último término se puede escribir como
+
+	\begin{equation}
+		\odv{F(q_{i}, t)}{t} = \odv{F(q_{i}, t)}{q_{i}} \dot{q}_{i} + \pdv{F}{t}.
+		\label{eq:dt-F}
+	\end{equation}
+
+	Así, el momento generalizado queda como
+
+	\begin{align*}
+		p_{i}^{\prime} & = \pdv{L}{\dot{q}_{i}} + \pdv*{\Biggl[\pdv{F(q_{i}, t)}{q_{i}} \dot{q}_{i} + \pdv{F}{t}\Biggr]}{\dot{q}_{i}},\nonumber \\
+		p_{i}^{\prime} = \pdv{L}{\dot{q}_{i}} + \pdv{F}{q_{i}},
+	\end{align*}
+
+	pero \(p_{i} = \pdv{p_{i}}{q_{i}}\),
+
+	\begin{empheq}[box = \mainresult]{equation}
+		p_{i}^{\prime} = p_{i} + \pdv{F}{q_{i}}.
+		\label{eq:prime-conjugate-momenta}
+	\end{empheq}
+
+	Entonces, el Hamiltoniano es
+
+	\begin{align*}
+		H^{\prime} & = p_{i}^{\prime} \dot{q}_{i} - L^{\prime},                                        \\
+		           & = \Biggl(p_{i} + \pdv{F}{q_{i}}\Biggr)\dot{q}_{i} - \Biggl(L + \odv{F}{t}\Biggr).
+	\end{align*}
+
+	Sustituyendo la \zcref{eq:dt-F}, tenemos que
+
+	\begin{align}
+		H^{\prime}             & = p_{i} \dot{q}_{i} + \pdv{F}{q_{i}} \dot{q}_{i} - L - \pdv{F}{q_{i}} \dot{q}_{i} - \pdv{F}{t},\nonumber \\
+		                       & = p_{i} \dot{q}_{i} - L - \pdv{F}{t},\nonumber                                                           \\
+		\Aboxedmain{H^{\prime} & = H - \pdv{F}{t}.}\label{eq:prime-hamiltonian}
+	\end{align}
+
+	Calculamos ahora las ecuaciones de Hamilton de \(H^{\prime}\), recordando que las
+	ecuaciones para \(H\) son
+
+	\begin{align*}
+		\dot{q}_{i}   & = \pdv{H}{p_{i}}, \\
+		- \dot{p}_{i} & = \pdv{H}{q_{i}}.
+	\end{align*}
+
+	Así, para la primera ecuación tenemos
+
+	\begin{align*}
+		\pdv{H^{\prime}(q_{i}, p_{i}^{\prime})}{p_{i}^{\prime}} & = \pdv*{\Biggl(p_{i}^{\prime} \dot{q}_{i} - L^{\prime}(q_{i}, \dot{q}_{i})\Biggr)}{p_{i}^{\prime}}, \\
+		                                                        & = \pdv{(p_{i}^{\prime} \dot{q}_{i})}{p_{i}^{\prime}} - \pdv{L^{\prime}}{p_{i}^{\prime}},            \\
+		                                                        & = \dot{q}_{i}.
+	\end{align*}
+
+	Por lo tanto,
+
+	\begin{empheq}[box = \mainresult]{equation*}
+		\dot{q}_{i} = \pdv{H^{\prime}}{p_{i}^{\prime}}.
+	\end{empheq}
+
+	Ahora, para la segunda ecuación, sustituimos \zcref{eq:prime-conjugate-momenta,eq:prime-hamiltonian},
+
+	\begin{align*}
+		-\Biggl(\dot{p}_{i} + \odv*{\Biggl(\pdv{F}{q_{i}}\Biggr)}{t}\Biggr) & =
+		\pdv*{\Biggl(H(q_{i}, p_{i}) - \pdv{F}{t}\Biggr)}{q_{i}},               \\
+		- \dot{p}_{i} - \odv*{\Biggl(\pdv{F}{q_{i}}\Biggr)}{t}              & =
+		\pdv{H}{q_{i}} - \pdv*{\Biggl(\pdv{F}{t}\Biggr)}{q_{i}},
+	\end{align*}
+
+	pero \(\odv*{\Bigl(\pdv{F}{q_{i}}\Bigr)}{t} = \pdv*{\Bigl(\pdv{F}{t}\Bigr)}{q_{i}}\).
+	Así,
+
+	\begin{empheq}[box = \mainresult]{equation*}
+		- \dot{p}_{i} = \pdv{H}{q_{i}}.
+	\end{empheq}
+
+	Por lo tanto, las ecuaciones de Hamilton de \(H^{\prime}\) se reducen
+	a las ecuaciones de Hamilton para \(H\).
 \end{problema}
 \end{document}
