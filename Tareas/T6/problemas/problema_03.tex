@@ -7,5 +7,118 @@
 	and \(K\) are positive constants. Write down the Hamiltonian and
 	Hamilton's equations, using \(x\) and \(y\) as generalized
 	coordinates. Solve the latter and describe the motion.
+
+	\startsolution
+
+	La energía cinética para este sistema es
+
+	\begin{equation}
+		T = \dfrac{1}{2}m(\dot{x}^{2} + \dot{y}^{2}).
+		\label{eq:T-p3}
+	\end{equation}
+
+	Mientras que para obtener el potencial, primero verificamos si
+	la fuerza es conservativa, i.e. \(\nabla \mul{\vect{F}} = 0\),
+
+	\begin{align*}
+		\nabla \mul{\vect{F}} & =
+		\begin{vNiceMatrix}
+			\uvec{i} & \uvec{j} & \uvec{k} \\
+			\pdif{x} & \pdif{y} & \pdif{z} \\
+			-kx      & k        & 0        \\
+		\end{vNiceMatrix},                                                 \\
+		                      & = \uvec{i}(0 - 0) - \uvec{j}(0 - 0) + \uvec{k}(0 - 0), \\
+		                      & = 0.
+	\end{align*}
+
+	Por lo tanto, la fuerza es conservativa y podemos escribirla como
+
+	\begin{equation*}
+		\vect{F} = - \nabla{V}.
+	\end{equation*}
+
+	Así, tenemos que
+
+	\begin{align}
+		\pdv{V}{k} & = kx\label{eq:V_x}, \\
+		\pdv{V}{y} & = -K.\label{eq:V_y}
+	\end{align}
+
+	De la \zcref{eq:V_y} tenemos que
+
+	\begin{align*}
+		V = \int \odif[sep-end=\medspace]{x} kx, \\
+		V & = k \dfrac{x^{2}}{2} + C(y).
+	\end{align*}
+
+	Sustituyendo en la \zcref{eq:V_y},
+
+	\begin{equation*}
+		\pdv{V}{y} = \pdv{C}{y} = - K.
+	\end{equation*}
+
+	Así,
+
+	\begin{equation*}
+		C(y) = -Ky + \alpha,
+	\end{equation*}
+
+	donde podemos elegir \(\alpha = 0\) sin perdida de generalidad.
+
+	Por lo tanto, la energía potencial es
+
+	\begin{empheq}[box = \mainresult]{equation*}
+		V = \dfrac{1}{2}kx^{2} - Ky.
+	\end{empheq}
+
+	Y notemos que la energía potencial no depende de la velocidad ni depende
+	explícitamente del tiempo, por lo que \(H = T + V\). De esta manera,
+	escribimos la \zcref{eq:T-p3} en términos de los momentos conjugados, i.e.
+
+	\begin{equation*}
+		T = \dfrac{p_{x}^{2}}{2m} + \dfrac{p_{y}^{2}}{2m}.
+	\end{equation*}
+
+	Así, el Hamiltoniano del sistema es
+
+	\begin{equation*}
+		H = \dfrac{p_{x}^{2}}{2m} + \dfrac{p_{y}^{2}}{2m} + k \dfrac{x^{2}}{2} - Ky.
+	\end{equation*}
+
+	Por lo que las ecuaciones de Hamilton son
+
+	\begin{alignat*}{2}
+		\dot{x} & = \dfrac{p_{x}}{m};\quad - \dot{p}_{x} & {}={} & kx, \\
+		\dot{y} & = \dfrac{p_{y}}{m};\quad \dot{p}_{y}   & {}={} & K.
+	\end{alignat*}
+
+	Entonces, la EOM para x es
+
+	\begin{equation*}
+		\ddot{x} + \omega^{2}x = 0,
+	\end{equation*}
+
+	con \(\omega^{2} = \tfrac{k}{m}\). Y, para \(y\),
+
+	\begin{equation}
+		\ddot{y} = \dfrac{K}{m}.
+	\end{equation}
+
+	Resolviendo cada una de las EOM tenemos que
+
+	\begin{equation*}
+		x(t) = A \cos\bigl(\omega t\bigr) + B \sin\bigl(\omega t\bigr).
+	\end{equation*}
+
+	Y,
+
+	\begin{align*}
+		\dot{y} & = \dfrac{K}{m}t + v_{0y},              \\
+		y(t)    & = y_{0} + v_{0y}t + \dfrac{K}{m}t^{2}.
+	\end{align*}
+
+	Finalmente, tenemos que el movimiento en la dirección \(x\) es un
+	movimiento oscilatorio, mientras que en la dirección \(y\),
+	tenemos un movimiento similar al de caída libre.
 \end{problema}
 \end{document}
