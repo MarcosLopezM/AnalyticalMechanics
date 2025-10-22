@@ -6,5 +6,96 @@
 	of a sphere, centered at the origin, with a radius \(r(t)\) which is a
 	given function of time. Obtain the Hamiltonian and the canonical equations.
 	Discuss energy conservation. Is the Hamiltonian the total energy?
+
+	\startsolution
+
+	Como el movimiento está constriñido a una esfera, usamos coordenadas
+	para describir el movimiento de la partícula, por lo que la energía cinética
+	es
+
+	\begin{equation*}
+		T = \dfrac{1}{2}m\Bigl(\dot{r}^{2} + r^{2} \dot{\theta}^{2} + r^{2}\sin^{2}\theta \phi^{2}\Bigr),
+	\end{equation*}
+
+	Mientras que la energía potencial es
+
+	\begin{equation*}
+		U = mgr\cos\theta.
+	\end{equation*}
+
+	De esta forma, el Lagrangiano del sistema es
+
+	\begin{equation*}
+		L = \dfrac{1}{2}m \Bigl(\dot{r}^{2} + r^{2} \dot{\theta}^{2} + r^{2}\sin^{2}\theta \dot{\phi}^{2}\Bigr)
+		- mgr\cos\theta.
+	\end{equation*}
+
+	Pero como \(r(t)\) se nos da explícitamente, i.e. no es una variable dinámica.
+	El problema se reduce a uno con 2 DOF.
+
+	Calculamos los momentos conjugados
+
+	\begin{alignat*}{4}
+		p_{\theta}   & = \pdv{L}{\dot{\theta}} & {}={}                                   & mr^{2} \dot{\theta}             & {}\Longrightarrow{} &
+		\dot{\theta} & {}={}                   & \dfrac{p_{\theta}}{mr^{2}},                                                                       \\
+		p_{\phi}     & = \pdv{l}{\dot{\phi}}   & {}={}                                   & mr^{2}\sin^{2}\theta \dot{\phi} & {}\Longrightarrow{} &
+		\dot{\phi}   & {}={}                   & \dfrac{p_{\phi}}{mr^{2}\sin^{2}\theta}.
+	\end{alignat*}
+
+	El Hamiltoniano del sistema es
+
+	\begin{align*}
+		H             & = p_{\theta} \dot{\theta} + p_{\phi} \dot{\phi} - \dfrac{1}{2}m\Bigl(\dot{r}^{2} + r^{2} \dot{\theta}^{2} + r^{2}\sin^{2}\theta \dot{\phi}^{2}\Bigr)
+		+ mgr\cos\theta,\nonumber                                                                                                                                                      \\
+		              & = p_{\theta}\Bigl(\dfrac{p_{\theta}}{mr^{2}}\Bigr) +
+		p_{\phi}\Bigl(\dfrac{p_{\phi}}{mr^{2}\sin^{2}\theta}\Bigr)
+		- \dfrac{1}{2}mr^{2}\Bigl(\dfrac{p_{\theta}}{mr^{2}}\Bigr)^{2}
+		- \dfrac{1}{2}mr^{2}\sin^{2}\theta \Bigl(\dfrac{p_{\phi}}{mr^{2}\sin^{2}\theta}\Bigr)^{2}
+		- \dfrac{1}{2}m \dot{r}^{2}
+		+ mgr\cos\theta,                                                                                                                                                     \nonumber \\
+		\Aboxedmain{H & = \dfrac{p_{\theta}^{2}}{2mr^{2}} + \dfrac{p_{\phi}^{2}}{2mr^{2}\sin^{2}\theta} - \dfrac{1}{2}m \dot{r}^{2} + mgr\cos\theta.}
+	\end{align*}
+
+	Por lo que las ecuaciones de Hamilton son
+
+	\begin{alignat*}{4}
+		\text{Para } \theta & \colon \quad \dot{\theta} & {}={}              & \dfrac{p_{\theta}}{mr^{2}} \quad
+		                    & {}\wedge{}                & \quad - p_{\theta} & {}={}                                        & \dfrac{p_{\phi}}{4mr^{2}\sin\theta\cos\theta} - mgr\sin\theta, \\
+		\text{Para } \phi   & \colon \quad \dot{\phi}   & {}={}              & \dfrac{p_{\phi}}{mr^{2}\sin^{2}\theta} \quad
+		                    & {}\wedge{}                & \quad p_{\phi}     & {}={}                                        & 0.
+	\end{alignat*}
+
+	Por otro lado, como el Lagrangiano no depende explícitamente del tiempo, \(E = T + U\),
+
+	\begin{equation*}
+		E  = \dfrac{p_{\theta}^{2}}{2mr^{2}} + \dfrac{p_{\phi}^{2}}{2mr^{2}\sin^{2}\theta} +
+		\dfrac{1}{2}m \dot{r}^{2}
+		+ mgr\cos\theta.
+	\end{equation*}
+
+	¿Es \(H = E\)? La respuesta es no, pues
+
+	\begin{equation}
+		E = H + m \dot{r}^{2}.
+		\label{eq:energy-system}
+	\end{equation}
+
+	Es decir, el Hamiltoniano no corresponde a la energía total
+	del sistema, pues aunque el potencial es independiente de las velocidades y
+	no depende explícitamente del tiempo, la transformación de coordenadas sí depende
+	explícitamente del tiempo.
+
+	Finalmente, para determinar si la energía del sistema se conserva,
+	calculamos la derivada respecto al tiempo de la \zcref{eq:energy-system},
+
+	\begin{align*}
+		\odv{E}{t} & = \odv{H}{t} + 2m \dot{r} \ddot{r},\nonumber \\
+		           & = \pdv{H}{t} + 2m \dot{r} \ddot{r},          \\
+		           & = m \dot{r} \ddot{r} + 2m \dot{r} \ddot{r},  \\
+		           & = 3m \dot{r}\ddot{r},                        \\
+		           & \neq 0.
+	\end{align*}
+
+	Por lo tanto, la energía del sistema no se conserva.
 \end{problema}
 \end{document}
