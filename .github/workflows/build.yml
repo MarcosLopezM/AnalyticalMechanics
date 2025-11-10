@@ -8,6 +8,7 @@ on:
       - "Tareas/T5/**"
       - "Tareas/T6/**"
       - "Tareas/T7/**"
+      - "Tareas/T8/**"
 
 jobs:
   build-tarea-2:
@@ -66,6 +67,16 @@ jobs:
       relative_path: Tareas/T7
       tex_name: main
       out_name: "Tarea7"
+      # send_it: true
+      email_to: "marcoslm@ciencias.unam.mx"
+    secrets: inherit
+
+  Build-Tarea8:
+    uses: MarcosLopezM/latex-workflow/.github/workflows/build-pdf.yml@main
+    with:
+      relative_path: Tareas/T8
+      tex_name: main
+      out_name: "Tarea8"
       # send_it: true
       email_to: "marcoslm@ciencias.unam.mx"
     secrets: inherit
